@@ -29,3 +29,7 @@ html {
 #start-game {
     text-align: center;
 }
+/*styling css 0 format starting right/left player*/
+.live-content h1 {
+    font-size: 10em;
+}
