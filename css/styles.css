@@ -45,5 +45,9 @@ html {
 }
 .dice-game {
     padding-top: 6%;
-    display: none;
+  
 }
+.center-panel button {
+    margin: 5%;
+}
+
