@@ -33,6 +33,7 @@ html {
 .live-content h1 {
     font-size: 10em;
 }
+/*select who have to play*/
 .player-turn {
     background-color: rgba(255, 99, 71, 0.116);
     height: 20em;
@@ -56,6 +57,7 @@ html {
     font-size: 1.5em;
     color: rgba(255, 0, 0, 0.616);
 }
+/*result for the winner*/
 .winner {
     background-image: url("../img/dice.gif");
     background-size: cover;
@@ -67,7 +69,26 @@ html {
     padding-left: 2%;
     color: white;
 }
+/* increase padding of roll/reset/hold*/
 .center-panel button {
     padding-left: 1.5em;
     padding-right: 1.5em;
+}
+/*play button*/
+a.btn {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: solid 1px rgba(248, 0, 0, 0.973);
+    color: rgb(252, 252, 252);
+    background-color: rgb(255, 0, 0);
+    margin: 0.1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+a:hover.btn {
+    background-color: #eeeceb00;
+    color: white;
 }
