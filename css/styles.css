@@ -67,3 +67,7 @@ html {
     padding-left: 2%;
     color: white;
 }
+.center-panel button {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
