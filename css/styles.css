@@ -92,3 +92,22 @@ a:hover.btn {
     background-color: #eeeceb00;
     color: white;
 }
+.live-content,
+.winner-text {
+    font-family: 'Julius Sans One';
+}
+a#fresh-game {
+    font-family: 'Averia Sans Libre';
+    text-transform: uppercase;
+    font-style: oblique;
+    font-size: 1.4em;
+}
+.footer {
+    display: none;
+}
+
+.footer-content {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+}
