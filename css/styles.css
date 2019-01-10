@@ -33,3 +33,13 @@ html {
 .live-content h1 {
     font-size: 10em;
 }
+.player-turn {
+    background-color: rgba(255, 99, 71, 0.116);
+    height: 20em;
+}
+
+.game-content {
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+}
