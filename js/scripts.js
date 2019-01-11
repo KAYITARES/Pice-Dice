@@ -19,3 +19,17 @@ var genRandom = function () {
     randomNo = Math.floor(Math.random() * 6) + 1;
     return randomNo;
 }
+//Method for the playersInfo constructor to add total score per turn
+playersInfo.prototype.addScores = function (thisMark) {
+    if (thisMarks == 1) {
+        this.playerMarks = 0;
+    }
+    else if (thisMark !== 1) {
+        this.playerMarks = this.playerMarks + thisMark;
+    }
+    return this.playerMarks;
+}
+//method for the playersInfo constructor to add amount of number returned plus the existing number
+playersInfo.prototype.total = function (total) {
+    return this.totalScores = this.totalScores + total;
+}
