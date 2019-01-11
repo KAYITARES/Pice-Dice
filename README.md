@@ -18,7 +18,7 @@ The other player then takes the die over.
 ## Setup/Installation Requiremet
 * Open your computer or smart phone
 * Connect to internet
-* search for my link:KAYITARES.github.io/Pig-Dice
+* search for my link:KAYITARES.github.io/Pice-Dice
 * now you reach on my website
 ## BDD(Behavior-Driven Development)
 ### Specifications
@@ -33,7 +33,7 @@ An output of one results in a zero of accumulated points.
 ### The first player to get 100 is the Winner!
 
 ## Preview
-**[Click here](https://KAYITARES.github.io/Pig-Dice)** to see the live site.
+**[Click here](https://KAYITARES.github.io/Pice-Dice)** to see the live site.
 
 ## Known Bugs
 No bugs so far. If found, email me at cyntkayitare@gmail.com
