@@ -54,3 +54,22 @@ function reset() {
     $("h1").text("0");
     $(".cumulative").text("");
 }
+//user interface logic
+
+//section to hide screen with start game button and show new empty game
+$(document).ready(function () {
+    $("#fresh-game").click(function () {
+        $("#start-game").hide();
+        $(".dice-game").show();
+        $("#reset").hide();
+    })
+    //section to reset game and show new starting player when we click start button
+    $("#reset").click(function () {
+        reset();
+        $("#hold").show();
+        $("#roll-dice").hide();
+        $("#reset").hide();
+        $("#content1").addClass("player-turn");
+        //console.log(finalScore);
+    })
+})
