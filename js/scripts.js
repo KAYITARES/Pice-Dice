@@ -14,3 +14,8 @@ function playersInfo(name, score, totalScore) {
     this.playerMarks = score;
     this.totalScores = totalScore;
 }
+//when user rolls function that choose random number between 1 and 6 without floating points
+var genRandom = function () {
+    randomNo = Math.floor(Math.random() * 6) + 1;
+    return randomNo;
+}
