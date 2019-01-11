@@ -1,5 +1,5 @@
 # Pig-Dice
-#### Fourth Independent Project for Moringa prep class , April 8th, 2018
+#### Fourth Independent Project for Moringa prep class , January 10th, 2019
 #### By **KAYITARE Cynthia**
 
 ## Description
@@ -15,8 +15,13 @@ When a one is rolled, accumulated points are discarded and the other player take
 When Hold is pressed, the accumulated points are added to the player's final Score.
 
 The other player then takes the die over.
-
-## Specifications
+## Setup/Installation Requiremet
+* Open your computer or smart phone
+* Connect to internet
+* search for my link:KAYITARES.github.io/Pig-Dice
+* now you reach on my website
+## BDD(Behavior-Driven Development)
+### Specifications
 The web application will request the names of two users.
 
 The two players will proceed to roll the dice, by generating a random number from 1 to 6.
@@ -31,7 +36,7 @@ An output of one results in a zero of accumulated points.
 **[Click here](https://KAYITARES.github.io/Pig-Dice)** to see the live site.
 
 ## Known Bugs
-No bugs so far. If found, email me at developer.waweru@gmail.com
+No bugs so far. If found, email me at cyntkayitare@gmail.com
 
 ## Technologies Used
     1. HTML
@@ -40,7 +45,9 @@ No bugs so far. If found, email me at developer.waweru@gmail.com
     4. jQuery
 
 ## Support and contact details
-Contact me on cyntkayitare@gmail.com for any comments, reviews or advice.
+* Contact me on cyntkayitare@gmail.com for any comments, reviews or advice.or
+* phone:0734869264
 
 ### License
-http://choosealisence.com/licenses/mit/CopyrightCopyright (c) **KAYITARE Cynthia**
+**[MIT](http://choosealisence.com/licenses/mit/CopyrightCopyright)**
+copyright (c) **KAYITARE Cynthia**

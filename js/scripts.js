@@ -84,7 +84,8 @@ $(document).ready(function () {
             console.log(playerDetails);
             reset();
             //stop showing pop for 2 player name inserted
-        } else if (num == 2) {
+        } 
+        else if (num == 2) {
             $("#input-details").modal('hide');
         }
         var inputtedName = $("#name-player").val();
@@ -111,17 +112,20 @@ $(document).ready(function () {
                 $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
                 // alert("Oooops, You rolled a 1. " + switchPlayer.playerNames + "'s turn");
                 $("#content" + (pos + 1)).addClass("player-turn");
-            } else if (getRandom > 1) {
+            } 
+            else if (getRandom > 1) {
                 newMark = getPlayerId.playerMarks;
                 $("p.text-uppercase").text("");
                 $("#content" + (pos + 1) + " h4").text(newMark);
                 $("#image-die").html("<img class='dice' height='200' width = '200' src=" + getDieSide(getRandom) + ">")
             }
             console.log(getRandom + " " + pos + " " + newMark);
-        } else if (num == 1) {
+        } 
+        else if (num == 1) {
             alert("Player 2 Name Required");
             $("#input-details").modal();
-        } else if (num == 0) {
+        } 
+        else if (num == 0) {
             alert("Players' Names Required");
             $("#input-details").modal();
         }
@@ -142,7 +146,8 @@ $(document).ready(function () {
                 $("#content" + (pos + 1)).removeClass("player-turn");
                 pos = 1;
                 $("#content" + (pos + 1)).addClass("player-turn");
-            } else if (pos == 1) {
+            } 
+            else if (pos == 1) {
                 $("#content" + (pos + 1)).removeClass("player-turn");
                 pos = 0;
                 $("#content" + (pos + 1)).addClass("player-turn");
@@ -160,10 +165,12 @@ $(document).ready(function () {
                 $("#content1").removeClass("player-turn");
                 $("#content2").removeClass("player-turn");
             }
-        } else if (num == 1) {
+        } 
+        else if (num == 1) {
             alert("Player 2 Name Required");
             $("#input-details").modal();
-        } else if (num == 0) {
+        }
+         else if (num == 0) {
             alert("Players' Names Required");
             $("#input-details").modal();
 
