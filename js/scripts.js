@@ -21,7 +21,7 @@ var genRandom = function () {
 }
 //Method for the playersInfo constructor to add total score per turn
 playersInfo.prototype.addScores = function (thisMark) {
-    if (thisMarks == 1) {
+    if (thisMark == 1) {
         this.playerMarks = 0;
     }
     else if (thisMark !== 1) {
@@ -67,9 +67,106 @@ $(document).ready(function () {
     $("#reset").click(function () {
         reset();
         $("#hold").show();
-        $("#roll-dice").hide();
+        $("#roll-dice").show();
         $("#reset").hide();
         $("#content1").addClass("player-turn");
         //console.log(finalScore);
     })
-})
+    //section to make sure that player do't exceed 2 
+    $("#player-names").submit(function (event) {
+        event.preventDefault();
+        //increament when new user name is submitted
+        num++;
+        if (num > 2) {
+            alert("players cannot exceed 2!");
+            playerDetails = [];
+            num = 0;
+            console.log(playerDetails);
+            reset();
+            //stop showing pop for 2 player name inserted
+        } else if (num == 2) {
+            $("#input-details").modal('hide');
+        }
+        var inputtedName = $("#name-player").val();
+        var newPlayer = new playersInfo(inputtedName, 0, 0);
+        playerDetails.push(newPlayer);
+        $("#content1").addClass("player-turn");
+        $("#content" + num + " h2").html("<span class=player" + num + ">" + newPlayer.playerNames + "</span>");
+
+        $("#name-player").val("");
+    });
+    $("#roll-dice").click(function () {
+        if (num == 2) {
+            var switchPlayer;
+            var getRandom = genRandom();
+            var getPlayerId = playerDetails[pos];
+            getPlayerId.addScores(getRandom);
+            if (getRandom == 1 && pos == 0) {
+                $("#content" + (pos + 1) + "h4").text("0");
+                //section to give score 0 and change styling when player1 rolls 1
+                $("#content" + (pos + 1)).removeClass("player-turn");
+                $("#image-die").html("");
+                pos = 1;
+                switchPlayer = playerDetails[pos];
+                $("p.text-uppercase").html("Oooops, You rolled a 1. <br>" + switchPlayer.playerNames + "'s turn");
+                // alert("Oooops, You rolled a 1. " + switchPlayer.playerNames + "'s turn");
+                $("#content" + (pos + 1)).addClass("player-turn");
+            } else if (getRandom > 1) {
+                newMark = getPlayerId.playerMarks;
+                $("p.text-uppercase").text("");
+                $("#content" + (pos + 1) + " h4").text(newMark);
+                $("#image-die").html("<img class='dice' height='200' width = '200' src=" + getDieSide(getRandom) + ">")
+            }
+            console.log(getRandom + " " + pos + " " + newMark);
+        } else if (num == 1) {
+            alert("Player 2 Name Required");
+            $("#input-details").modal();
+        } else if (num == 0) {
+            alert("Players' Names Required");
+            $("#input-details").modal();
+        }
+    });
+    $("#hold").click(function () {
+        if (num == 2) {
+            var getPlayerId = playerDetails[pos];
+            newMark = getPlayerId.playerMarks;
+            getPlayerId.total(newMark);
+            finalScore = getPlayerId.totalScores;
+            console.log(finalScore);
+            //Make the total become 0;//Final score, This Round, Dice Value
+            getPlayerId.playerMarks = 0;
+            $("#content" + (pos + 1) + " h4").text("0");
+            $("#content" + (pos + 1) + " h1").text(finalScore);
+            $("#image-die").html("");
+            if (pos == 0) {
+                $("#content" + (pos + 1)).removeClass("player-turn");
+                pos = 1;
+                $("#content" + (pos + 1)).addClass("player-turn");
+            } else if (pos == 1) {
+                $("#content" + (pos + 1)).removeClass("player-turn");
+                pos = 0;
+                $("#content" + (pos + 1)).addClass("player-turn");
+            }
+            //section to determine and display the winner
+            if (finalScore > 100) {
+                playerDetails[0].totalScores = 0;
+                playerDetails[1].totalScores = 0;
+                $(".winner-text").html("<h3 class = 'text-uppercase'>" + getPlayerId.playerNames + " HAS WON!!!</h3>")
+                $("#winner-modal").modal();
+                // alert(getPlayerId.playerNames + " has won!!");
+                $("#hold").hide();
+                $("#roll-dice").hide();
+                $("#reset").show();
+                $("#content1").removeClass("player-turn");
+                $("#content2").removeClass("player-turn");
+            }
+        } else if (num == 1) {
+            alert("Player 2 Name Required");
+            $("#input-details").modal();
+        } else if (num == 0) {
+            alert("Players' Names Required");
+            $("#input-details").modal();
+
+        }
+    });
+});
