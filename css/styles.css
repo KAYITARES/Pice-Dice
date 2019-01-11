@@ -2,7 +2,7 @@
 body,
 html {
     height: 100%;
-    background-image: url("../img/header-image.jpg");
+    background-image: url("../img/header-img.jpeg");
     background-size: cover;
     position: relative;
 }
